@@ -1,0 +1,343 @@
+EESchema Schematic File Version 4
+LIBS:ESP8266Inclinometer-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 7450 7500 0    50   ~ 0
+Battery powered ESP8266  & LIS3DH Sensor
+Text Notes 8150 7650 0    50   ~ 0
+December 18th 2019
+Text Notes 7150 6700 0    50   ~ 0
+A battery powered inclinometer based on ESP8266 ESP-12F Wifi Module and LIS3DH Accelerometer.\n
+$Comp
+L ESP8266:ESP-12F U1
+U 1 1 5DFA7E27
+P 5500 2500
+F 0 "U1" H 5500 3265 50  0000 C CNN
+F 1 "ESP-12F" H 5500 3174 50  0000 C CNN
+F 2 "" H 5500 2500 50  0001 C CNN
+F 3 "" H 5500 2500 50  0001 C CNN
+	1    5500 2500
+	1    0    0    -1  
+$EndComp
+Text GLabel 4600 2900 0    50   Input ~ 0
+Vcc
+Wire Wire Line
+	4600 2500 4400 2500
+Wire Wire Line
+	4400 2500 4400 2200
+Wire Wire Line
+	4400 2200 4600 2200
+$Comp
+L Device:R R1
+U 1 1 5DFA9589
+P 6550 2700
+F 0 "R1" V 6550 2700 50  0000 C CNN
+F 1 " " V 6434 2700 50  0000 C CNN
+F 2 "" V 6480 2700 50  0001 C CNN
+F 3 "~" H 6550 2700 50  0001 C CNN
+	1    6550 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5DFAAB2F
+P 6550 2800
+F 0 "R3" V 6550 2800 50  0000 C CNN
+F 1 " " V 6434 2800 50  0000 C CNN
+F 2 "" V 6480 2800 50  0001 C CNN
+F 3 "~" H 6550 2800 50  0001 C CNN
+	1    6550 2800
+	0    1    1    0   
+$EndComp
+Text GLabel 6700 2700 2    50   Input ~ 0
+Vcc
+$Comp
+L Jumper:Jumper_3_Open JP1
+U 1 1 5DFAD554
+P 7300 2600
+F 0 "JP1" V 7254 2687 50  0000 L CNN
+F 1 "Program/Run" V 7345 2687 50  0000 L CNN
+F 2 "" H 7300 2600 50  0001 C CNN
+F 3 "~" H 7300 2600 50  0001 C CNN
+	1    7300 2600
+	0    1    1    0   
+$EndComp
+Text GLabel 7300 3150 3    50   Input ~ 0
+Vcc
+$Comp
+L Jumper:Jumper_3_Open JP2
+U 1 1 5DFB0880
+P 7750 2050
+F 0 "JP2" V 7704 2137 50  0000 L CNN
+F 1 "Serial IO" V 7795 2137 50  0000 L CNN
+F 2 "" H 7750 2050 50  0001 C CNN
+F 3 "~" H 7750 2050 50  0001 C CNN
+	1    7750 2050
+	0    1    1    0   
+$EndComp
+Text GLabel 6400 2200 2    50   Input ~ 0
+Tx
+Text GLabel 6400 2300 2    50   Input ~ 0
+Rx
+Text GLabel 7750 1800 0    50   Input ~ 0
+Tx
+Text GLabel 7600 2050 0    50   Input ~ 0
+Rx
+Text GLabel 3750 2000 0    50   Input ~ 0
+Vcc
+$Comp
+L Device:R R2
+U 1 1 5DFB3EE5
+P 3900 2150
+F 0 "R2" V 3900 2100 50  0000 L CNN
+F 1 " " H 3970 2105 50  0000 L CNN
+F 2 "" V 3830 2150 50  0001 C CNN
+F 3 "~" H 3900 2150 50  0001 C CNN
+	1    3900 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 5DFB4A3D
+P 3900 2650
+F 0 "SW1" V 3800 2400 50  0000 L CNN
+F 1 " " V 3945 2748 50  0000 L CNN
+F 2 "" H 3900 2650 50  0001 C CNN
+F 3 "~" H 3900 2650 50  0001 C CNN
+	1    3900 2650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 2000 3900 2000
+Wire Wire Line
+	3900 2300 3900 2400
+Text GLabel 3700 2400 0    50   Input ~ 0
+EN
+Wire Wire Line
+	3700 2400 3900 2400
+Connection ~ 3900 2400
+Wire Wire Line
+	3900 2400 3900 2450
+Text GLabel 4600 2400 0    50   Input ~ 0
+EN
+Text Notes 3550 1900 0    50   ~ 0
+Reset
+Text Notes 3600 3550 0    50   ~ 0
+Note: \nR1,2,3,4 - 3K to 10K
+Text GLabel 4600 2800 0    50   Input ~ 0
+IMU_PWR
+Text GLabel 6400 2400 2    50   Input ~ 0
+SCL
+Text GLabel 6400 2500 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	6400 2900 6550 2900
+Wire Wire Line
+	6550 2900 6550 3100
+$Comp
+L power:GND #PWR?
+U 1 1 5DFB9613
+P 6550 3100
+F 0 "#PWR?" H 6550 2850 50  0001 C CNN
+F 1 "GND" H 6555 2927 50  0000 C CNN
+F 2 "" H 6550 3100 50  0001 C CNN
+F 3 "" H 6550 3100 50  0001 C CNN
+	1    6550 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5DFAEEC8
+P 7300 3000
+F 0 "R4" V 7300 2950 50  0000 L CNN
+F 1 " " H 7370 2955 50  0000 L CNN
+F 2 "" V 7230 3000 50  0001 C CNN
+F 3 "~" H 7300 3000 50  0001 C CNN
+	1    7300 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 2600 7150 2600
+$Comp
+L Sensor_Motion:LIS3DH U2
+U 1 1 5DFBE2D2
+P 5600 4500
+F 0 "U2" H 5600 3719 50  0000 C CNN
+F 1 "LIS3DH" H 5600 3810 50  0000 C CNN
+F 2 "Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y" H 5700 3450 50  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/cd00274221.pdf" H 5400 4400 50  0001 C CNN
+	1    5600 4500
+	-1   0    0    1   
+$EndComp
+Text GLabel 5500 5000 3    50   Input ~ 0
+IMU_PWR
+Text GLabel 6100 4300 2    50   Input ~ 0
+SCL
+Text GLabel 6100 4400 2    50   Input ~ 0
+SDA
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5DFBF6B8
+P 7850 4050
+F 0 "BT1" H 7968 4146 50  0000 L CNN
+F 1 "LiPO 18650" H 7968 4055 50  0000 L CNN
+F 2 "" V 7850 4110 50  0001 C CNN
+F 3 "~" V 7850 4110 50  0001 C CNN
+	1    7850 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DFC0233
+P 7850 4150
+F 0 "#PWR?" H 7850 3900 50  0001 C CNN
+F 1 "GND" H 7855 3977 50  0000 C CNN
+F 2 "" H 7850 4150 50  0001 C CNN
+F 3 "" H 7850 4150 50  0001 C CNN
+	1    7850 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:MCP1700-3302E_TO92 U?
+U 1 1 5DFC0BEC
+P 7450 4150
+F 0 "U?" V 7404 4045 50  0000 R CNN
+F 1 "MCP1700-3302E_TO92" V 7050 4600 39  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7450 3950 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf" H 7450 4150 50  0001 C CNN
+	1    7450 4150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7450 3850 7850 3850
+Wire Wire Line
+	7750 4150 7850 4150
+Connection ~ 7850 4150
+$Comp
+L Device:CP C1
+U 1 1 5DFC641C
+P 7450 4750
+F 0 "C1" H 7568 4796 50  0000 L CNN
+F 1 "100uF" H 7568 4705 50  0000 L CNN
+F 2 "" H 7488 4600 50  0001 C CNN
+F 3 "~" H 7450 4750 50  0001 C CNN
+	1    7450 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 4450 7450 4600
+$Comp
+L power:GND #PWR?
+U 1 1 5DFC7135
+P 7450 4900
+F 0 "#PWR?" H 7450 4650 50  0001 C CNN
+F 1 "GND" H 7455 4727 50  0000 C CNN
+F 2 "" H 7450 4900 50  0001 C CNN
+F 3 "" H 7450 4900 50  0001 C CNN
+	1    7450 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5DFC7AC8
+P 7050 4750
+F 0 "C2" H 7165 4796 50  0000 L CNN
+F 1 "10nF" H 7165 4705 50  0000 L CNN
+F 2 "" H 7088 4600 50  0001 C CNN
+F 3 "~" H 7050 4750 50  0001 C CNN
+	1    7050 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DFC88B2
+P 7050 4900
+F 0 "#PWR?" H 7050 4650 50  0001 C CNN
+F 1 "GND" H 7055 4727 50  0000 C CNN
+F 2 "" H 7050 4900 50  0001 C CNN
+F 3 "" H 7050 4900 50  0001 C CNN
+	1    7050 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 4600 7450 4600
+Connection ~ 7450 4600
+Wire Wire Line
+	7050 4600 6900 4600
+Connection ~ 7050 4600
+Text GLabel 6900 4600 0    50   Input ~ 0
+Vcc
+$Comp
+L power:GND #PWR?
+U 1 1 5DFC9A0C
+P 7750 2300
+F 0 "#PWR?" H 7750 2050 50  0001 C CNN
+F 1 "GND" H 7755 2127 50  0000 C CNN
+F 2 "" H 7750 2300 50  0001 C CNN
+F 3 "" H 7750 2300 50  0001 C CNN
+	1    7750 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DFC9C85
+P 7150 2350
+F 0 "#PWR?" H 7150 2100 50  0001 C CNN
+F 1 "GND" H 7155 2177 50  0000 C CNN
+F 2 "" H 7150 2350 50  0001 C CNN
+F 3 "" H 7150 2350 50  0001 C CNN
+	1    7150 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 2350 7300 2350
+$Comp
+L power:GND #PWR?
+U 1 1 5DFCACAF
+P 6800 2800
+F 0 "#PWR?" H 6800 2550 50  0001 C CNN
+F 1 "GND" H 6805 2627 50  0000 C CNN
+F 2 "" H 6800 2800 50  0001 C CNN
+F 3 "" H 6800 2800 50  0001 C CNN
+	1    6800 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2800 6800 2800
+$Comp
+L power:GND #PWR?
+U 1 1 5DFCBA4D
+P 3900 2850
+F 0 "#PWR?" H 3900 2600 50  0001 C CNN
+F 1 "GND" H 3905 2677 50  0000 C CNN
+F 2 "" H 3900 2850 50  0001 C CNN
+F 3 "" H 3900 2850 50  0001 C CNN
+	1    3900 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DFCC2C4
+P 5100 3900
+F 0 "#PWR?" H 5100 3650 50  0001 C CNN
+F 1 "GND" H 5105 3727 50  0000 C CNN
+F 2 "" H 5100 3900 50  0001 C CNN
+F 3 "" H 5100 3900 50  0001 C CNN
+	1    5100 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 3900 5600 3900
+$EndSCHEMATC
