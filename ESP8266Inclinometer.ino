@@ -181,9 +181,9 @@ void ReportData()
         String url = "/XYDataPoint.aspx?m=";
         url += StationMAC;
         url += "&x=";
-        url += XAve;
+        url += String(XAve, 6);
         url += "&y=";
-        url += YAve;
+        url += String(YAve, 6);
 
         DEBUGOUT("URL: ");
         DEBUGOUTLN(url);
